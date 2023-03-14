@@ -1,0 +1,51 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "C++ gtest",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/debug/rateup",
+        "args": [  "--datadir=data", "--gtest_filter=UT_decimal.*"],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}/debug",
+        "environment": [],
+        "externalConsole": false,
+        // "preLaunchTask": "task",
+        "windows": {
+          "MIMode": "gdb",
+          "miDebuggerPath": "/usr/bin/gdb"
+        },
+        "linux": {
+          "MIMode": "gdb",
+          "setupCommands": [
+          { "text": "-enable-pretty-printing", "description": "enable pretty printing", "ignoreFailures": true },
+          { "text": "handle SIGPIPE nostop noprint pass", "description": "ignore SIGPIPE", "ignoreFailures": true }  
+          ]
+        }
+      },
+      {
+        "name": "C++ Launch",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/debug/rateup",
+        "args": [ "--port=3306", "--datadir=data"],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}/debug",
+        "environment": [],
+        "externalConsole": false,
+        // "preLaunchTask": "task",
+        "windows": {
+          "MIMode": "gdb",
+          "miDebuggerPath": "/usr/bin/gdb"
+        },
+        "linux": {
+          "MIMode": "gdb",
+          "setupCommands": [
+          { "text": "-enable-pretty-printing", "description": "enable pretty printing", "ignoreFailures": true },
+          { "text": "handle SIGPIPE nostop noprint pass", "description": "ignore SIGPIPE", "ignoreFailures": true }  
+          ]
+        }
+      }
+    ]
+  }
